@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jelajahi UMKM</title>
+  <link rel="stylesheet" href="tes.css">
+  <script>
+    // Fungsi untuk menampilkan judul dinamis berdasarkan kategori yang dipilih
+    function updateCategoryTitle() {
+      const category = document.getElementById("categorySelect").value;
+      const titleElement = document.getElementById("categoryTitle");
+
+      // Menyesuaikan judul dengan kategori yang dipilih
+      if (category === "semua") {
+        titleElement.innerText = "Jelajahi Semua UMKM";
+      } else {
+        titleElement.innerText = `Jelajahi Kategori ${category.charAt(0).toUpperCase() + category.slice(1)}`;
+      }
+    }
+
+    // Memastikan judul diperbarui saat halaman selesai dimuat
+    document.addEventListener("DOMContentLoaded", updateCategoryTitle);
+  </script>
+</head>
+<body>
+  <div class="umkm-container">
+    <!-- Judul Dinamis Berdasarkan Kategori -->
+    <h2 id="categoryTitle">Jelajahi UMKM</h2>
+
+    <div class="umkm-filter">
+      <input type="text" placeholder="Cari UMKM..." />
+      <select id="categorySelect" onchange="updateCategoryTitle()">
+        <option value="semua">Semua Kategori</option>
+        <option value="kuliner">Kuliner</option>
+        <option value="fashion">Fashion</option>
+        <!-- Tambahkan kategori lainnya -->
+      </select>
+    </div>
+
+    <div class="umkm-grid">
+      <!-- UMKM Card -->
+      <div class="umkm-card">
+        <img src="image1.jpg" alt="Logo UMKM" />
+        <h3>Warung Makanan Enak</h3>
+        <p>Lezatnya Berbeda</p>
+        <p>Location: Cempaka Putih</p>
+        <div class="rating">
+          <!-- Rating stars bisa ditambahkan di sini -->
+        </div>
+      </div>
+      <div class="umkm-card">
+        <img src="image2.jpg" alt="Logo UMKM" />
+        <h3>Dyana Cake</h3>
+        <p>Nikmat Tanpa Batas</p>
+        <p>Location: Tomang</p>
+        <div class="rating">
+          <!-- Rating stars bisa ditambahkan di sini -->
+        </div>
+      </div>
+      <div class="umkm-card">
+        <img src="image3.jpg" alt="Logo UMKM" />
+        <h3>Kedai Sasak Bali</h3>
+        <p>Rasa yang Bikin Balik Lagi</p>
+        <p>Location: Cikarang</p>
+        <div class="rating">
+          <!-- Rating stars bisa ditambahkan di sini -->
+        </div>
+      </div>
+      <!-- Tambahkan UMKM Card lain sesuai kebutuhan -->
+      <div class="umkm-card">
+        <img src="image3.jpg" alt="Logo UMKM" />
+        <h3>Kedai Joe Tegal</h3>
+        <p>Rasa yang Anjim Banget</p>
+        <p>Location: Tegal</p>
+        <div class="rating">
+          <!-- Rating stars bisa ditambahkan di sini -->
+        </div>
+      </div>
+    </div>
+
+    <div class="pagination">
+      <button>&laquo;</button>
+      <button>1</button>
+      <button>2</button>
+      <button class="active">3</button>
+      <button>4</button>
+      <button>&raquo;</button>
+    </div>
+  </div>
+</body>
+</html>
